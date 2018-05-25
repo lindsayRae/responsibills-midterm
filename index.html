@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Responsibills</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Added material Icons link -->
+  <!-- Bootstrap Style Sheet-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+  <!-- Google Fonts fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Pangolin|Permanent+Marker" rel="stylesheet">
+  <!-- Custom CSS file -->
+  <link href="style.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+  <div class="outerWhiteWraper">
+    <!-- Start Navbar from bootstrap-->
+    <nav class="navbar navbar-expand-lg navbar-light justify-content-flex-end">
+      <!--bg-light  -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Resources</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- End Navbar from Bootstrap-->
+
+    <h1>Responsi<span class="logoBills">Bills</span></h1>
+    <h6>Helping Young Teens to Budget Their Life!</h6>
+
+    <div class="budgetFormContainer" onclick="$('#enterBudgetPopUp').modal('show');">
+      <div class="remainingBudgetContainer">
+        <p class="circleButton" id="circleButtonId" data-toggle="tooltip" data-placement="top" title="Start out by entering your budget for the week here!">Click To Get Started!</p>
+      </div>
+    </div>
+
+    <!-- Detailed View Section -->
+    <h3>Weekly Expenses</h3>
+    <div class="detailedViewWrapper"></div>
+    <!-- End detailedViewWrapper-->
+
+    <!-- START ADD AND FILTER BUTTON-->
+    <footer>
+      <button class="filterTransactionButton" onclick="$('#filterPopUp').modal('show');" type="button" data-toggle="tooltip" data-placement="top" title="Click here to filter your purchases by category.">Filter Purchases</button>
+      <button class="add" type="button" onclick="$('#addTransactionPopUp').modal('show');" data-toggle="tooltip" data-placement="top" title="Click here to add a purchase you made recently.">Add Purchase</button>
+    </footer>
+    <!-- END ADD AND FILTER BUTTON-->
+
+
+ <!--closing whitewraper -->
+</div>
+
+<!-- BOOTSTRAP MODAL POPUP FOR FILTER -->
+<div id="filterPopUp" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content popupFormContainer">
+      <div class="modal-header">
+        <h5 class="modal-title">Filter Options</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <section id="filterPopUpSectionOptions">
+
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BOOTSTRAP MODAL POPUP FOR ADDING A TRANSACTION -->
+<div id="addTransactionPopUp"class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content popupFormContainer">
+      <div class="modal-header">
+        <h5 class="modal-title">Add a Transaction</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <select class="custom-select popupStyling" id="item_category" name="expenseCategoryList">
+          <option value="">Select</option>
+          <option value="Bills">Bills</option>
+          <option value="Fashion">Fashion</option>
+          <option value="Fun">Fun</option>
+          <option value="Food">Food</option>
+          <option value="Savings">Savings</option>
+        </select>
+        <input class="form-control popupStyling" id="item_name" type="text" placeholder="Item">
+        <input class="form-control popupStyling" id="item_price" type="text" placeholder="$">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="addTransactionButton" onclick="currentUser.addTransaction();" class="btn btn-primary popupStyling">Add Transaction</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--BOOTSTRAP MODAL POPUP FOR DISPLAYING OUT OF MONEY-->
+<div id="outOfMoneyPopup" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content popupFormContainer">
+      <div class="modal-header">
+        <h5 class="modal-title">WARNING!!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">          
+        <h4>You are out of Money, you better ask to do more chores.</h4>
+      </div>     
+    </div>
+  </div>
+</div>
+
+
+
+<!-- BOOTSTRAP MODAL POPUP FOR BUDGET -->
+<div id="enterBudgetPopUp" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content popupFormContainer">
+      <div class="modal-header">
+        <h5 class="modal-title">Enter your Budget for the Week!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <input type="text" class="form-control" id="weeklyBudget" placeholder="$">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onclick="currentUser.setBudget();">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+    <!-- Bootstrap JS-->
+    <script src="https://code.jquery.com/jquery-3.3.1.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+ <!-- Custom JS-->
+    <script src="script.js"></script>
+
+</body>
+
+
+</html>

@@ -1,0 +1,279 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+/* Main Elements */
+body {
+    background-image: url("img/backgroundImg900x725Dark.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;    
+    background-size: cover; 
+    font-family: 'Lato', sans-serif;
+}
+
+
+.outerWhiteWraper {
+    margin: 10% 10%;
+    background-color: white;
+    padding: 3% 10%;
+    border-radius: 5px;
+    border: 1px solid; 
+    padding: 10px;
+    box-shadow: 0px 0px 20px #888888;
+    opacity: 0.95;
+}
+h1 {
+    text-align: center;
+    font-family: 'Pangolin', cursive;
+    font-size: 35px;
+    margin-top: 15px;
+    
+}
+
+h6 {
+    text-align: center;
+    font-family: 'Pangolin', cursive;
+    font-size: 18px;
+}
+
+.logoBills {
+    color: #10B6F4;
+}
+
+.outerWhiteWraper h3 {
+    text-align: center;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 28px;
+    padding-bottom:15px;
+    color: #10B6F4;
+}
+/*Remaining Budget*/
+.budgetFormContainer {
+    margin-top: -15px;
+}
+.remainingBudgetContainer {
+    margin-top: 40px;       
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+.circleButton {
+    background-color: #5CF64A;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 200px;
+    height: 200px;  
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 30px;   
+    cursor: pointer;
+}
+
+.circleRedButton {
+    background-color: rgb(240, 52, 52);
+    color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 200px;
+    height: 200px;  
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 30px;   
+    cursor: pointer;
+}
+
+#outOfMoneyPopup {
+    background-color: rgba(161, 37, 37, 0.548);
+}
+
+.remainingBudget {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+/*************************** CATEGORY STYLING **************************/
+.bills, .fashion, .food, .fun, .savings {
+    border-radius: 5px;
+    width: 80%;
+    margin: 0 auto 10px auto;
+    box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.bills {
+    background-color: rgba(238, 10, 10, 0.5);
+}
+
+.fashion {
+    background-color: rgba(250, 42, 250, 0.5);
+}
+
+.food {
+    background-color: rgba(235, 131, 33, 0.5);
+}
+
+.fun {
+    background-color:rgba(1, 221, 221, 0.5);
+}
+
+.savings {
+    background-color: rgba(128, 253, 128, 0.5);
+}
+
+/****************************** FOOTER BUTTONS *****************/
+
+footer {
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 5%;
+}
+
+.add, .filterTransactionButton {
+    width: 100px;
+    padding: 5px;
+    font-family: 'Quicksand', sans-serif;
+    background-color:#10B6F4;
+    color:whitesmoke;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+ }
+/************************* DETAILED VIEW *************/
+.detailedViewWrapper {
+    /* margin-top: 45px; */
+    padding-bottom: 10px;
+}
+
+.detailedView {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.icons {
+    width: 30px;
+    height: 30px;
+    color: black;
+    margin: 5px;
+}
+
+/************************* POPUP FORM TO ADD PURCHASE *******************/
+.hidden {
+    display: none; 
+}
+
+.popupFormContainer{    
+    /* background-color: gray;  */
+    padding: 20px;
+}
+
+.popupFormContent {
+    /* display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column;  */
+
+}
+
+.popupStyling {    
+    background-color:rgb(125, 187, 118);
+    outline-color: white;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-bottom: 10px;
+    border: none;
+    height: 35px;
+
+
+}    
+#item_category {
+    font-family: 'Quicksand', sans-serif;
+    outline-color: white;
+}        
+    
+#addTransactionButton {
+    background-color:#5CF64A;
+    padding: 5px; 
+    border-radius: 3px; 
+    font-family: 'Quicksand', sans-serif;
+    border: none;
+}
+
+/****************************FILTER POPUP**********************/
+
+.filterContainer {   
+    position: fixed; 
+    background-color: gray; 
+    transform: translate(20%,-130%);
+    z-index:1;
+    padding: 20px;
+    border-radius: 3px;
+}
+   
+.filterButton {
+    background-color: #2196F3; /* Blue */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    cursor: pointer;
+}   
+.filter {
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+    float: left;
+    border: 2px blue solid;
+} 
+
+.btn-primary{
+    background-color:#5CF64A;
+    color:black;
+  
+
+}
+
+.btn-secondary{
+    background-color:red;
+    color: black;
+    
+
+
+}
+
+#weeklyBudget{
+ background-color: #5CF64A
+}
+/* input {
+    margin: 10px;
+}
+option {
+    margin: 10px;
+
+}
+.addPurchase {
+    text-align: center;
+} */
+
+@media only screen and (min-width: 600px){
+ /* body {
+    background-image: url(../img/backgroundImg2000x1306.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: auto;    */
+
+    .add, .filterTransactionButton {
+        width: 20%;
+    }
+    
+}
